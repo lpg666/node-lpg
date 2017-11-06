@@ -10,7 +10,7 @@ console.log('Static root dir: ' + root);
 var server = http.createServer(function (request, response) {
   var pathname = url.parse(request.url).pathname, // '/static/bootstrap.css'
       filepath = path.join(root, pathname);       // '/srv/www/static/bootstrap.css'
-
+  console.log(request.url,pathname);
   // 获取文件状态:
   fs.stat(filepath, function (err, stats) {
     // 没有出错并且文件存在:
